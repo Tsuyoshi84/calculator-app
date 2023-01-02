@@ -1,5 +1,5 @@
 <script lang="ts">
-	let displayValue = '399,981';
+	export let displayValue: string = '';
 </script>
 
 <div class="display">
@@ -16,5 +16,6 @@
 		font-size: 2.5rem;
 		text-align: end;
 		color: var(--color-text-sub);
+		min-block-size: 92px;
 	}
 </style>

@@ -6,7 +6,7 @@
 	export let large: boolean = false;
 </script>
 
-<button type="submit" class={`${type}`} class:large>
+<button type="submit" class={`${type}`} class:large on:click>
 	<div>
 		{label}
 	</div>
