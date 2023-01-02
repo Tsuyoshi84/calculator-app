@@ -3,13 +3,13 @@
 	import CalcDisplay from './CalcDisplay.svelte';
 	import CalcThemeSwitch from './CalcThemeSwitch.svelte';
 
-	import { calculator } from './stores';
+	import { calculator, theme } from './stores';
 </script>
 
 <section class="board">
 	<h1 class="title">calc</h1>
 	<div class="theme-switch">
-		<CalcThemeSwitch />
+		<CalcThemeSwitch bind:theme={$theme} />
 	</div>
 	<div class="display">
 		<CalcDisplay displayValue={$calculator} />
@@ -55,7 +55,7 @@
 	.title {
 		font-size: 2rem;
 		font-weight: 700;
-		color: var(--color-text-sub);
+		color: var(--color-text-board);
 		margin: 0;
 		grid-area: title;
 		display: flex;

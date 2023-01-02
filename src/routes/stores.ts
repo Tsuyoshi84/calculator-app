@@ -46,6 +46,8 @@ function calculateFromElements(elements: CalculationElement[]): string {
 
 		const lastProcessedValue = parseFloat(lastProcessedElement.value);
 
+		if (operator === 'divide' && parseFloat(value) === 0) return 'Infinity';
+
 		const newValue =
 			operator === 'multiply'
 				? lastProcessedValue * parseFloat(value)
@@ -200,3 +202,6 @@ function createCalculator() {
 }
 
 export const calculator = createCalculator();
+
+export type Theme = 1 | 2 | 3;
+export const theme = writable<Theme>(1);

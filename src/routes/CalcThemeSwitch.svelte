@@ -1,3 +1,9 @@
+<script lang="ts">
+	import type { Theme } from './stores';
+
+	export let theme: Theme | undefined = undefined;
+</script>
+
 <div class="theme-switch">
 	<div class="title">THEME</div>
 	<div class="switch-wrapper">
@@ -6,13 +12,13 @@
 			<span>2</span>
 			<span>3</span>
 		</div>
-		<input type="range" name="theme" id="theme-range" min="1" max="3" step="1" />
+		<input bind:value={theme} type="range" name="theme" id="theme-range" min="1" max="3" step="1" />
 	</div>
 </div>
 
 <style>
 	.theme-switch {
-		color: var(--color-text-sub);
+		color: var(--color-text-board);
 		display: flex;
 		gap: 1.5rem;
 		justify-content: flex-end;

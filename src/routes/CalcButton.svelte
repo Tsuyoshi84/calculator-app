@@ -4,9 +4,10 @@
 	export let type: ButtonType = 'normal';
 	export let label: string = '';
 	export let large: boolean = false;
+	export let invert: boolean = false;
 </script>
 
-<button type="submit" class={`${type}`} class:large on:click>
+<button type="submit" class={`${type}`} class:large class:invert on:click>
 	<div>
 		{label}
 	</div>
@@ -55,7 +56,7 @@
 	}
 
 	button.submit {
-		--text-color: var(--color-text-sub);
+		--text-color: var(--color-button-text-submit);
 		--background-color: var(--color-button-bg-submit);
 		--active-background-color: var(--color-button-bg-submit-active);
 		--shadow-color: var(--color-button-shadow-submit);

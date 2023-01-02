@@ -15,7 +15,7 @@
 		border-radius: 1rem;
 		font-size: 2.5rem;
 		text-align: end;
-		color: var(--color-text-sub);
+		color: var(--color-text-board);
 		min-block-size: 92px;
 	}
 </style>
