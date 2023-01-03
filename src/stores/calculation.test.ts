@@ -33,6 +33,8 @@ describe('calculation', () => {
 	it('should show number after adding decimal', () => {
 		addNumber('1');
 		addDecimal();
+		expect(get(displayValue)).toBe('1.');
+
 		addNumber('2');
 		expect(get(displayValue)).toBe('1.2');
 	});
@@ -121,5 +123,19 @@ describe('calculation', () => {
 
 		remove();
 		expect(get(displayValue)).toBe('');
+	});
+
+	it('should start new calculation when pressing number after calculation', () => {
+		addNumber('1');
+		addOperator('add');
+		addNumber('2');
+		calculate();
+		expect(get(displayValue)).toBe('3');
+
+		addNumber('9');
+		addOperator('add');
+		addNumber('2');
+		calculate();
+		expect(get(displayValue)).toBe('11');
 	});
 });
