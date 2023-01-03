@@ -35,13 +35,16 @@ jobs:
           cache: 'npm'
 
       - name: Install package
-        run: npm install
+        run: npm ci
 
-      # - name: Unit Test
-      #   run: npm run test:unit
+      - name: Unit Test
+        run: npm run test:unit
 
-      # - name: Test
-      #   run: npm test
+      - name: Install playwright browsers
+        run: npx playwright install --with-deps
+
+      - name: Test
+        run: npm test
 
       - name: Check
         run: npm run check

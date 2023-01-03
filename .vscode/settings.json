@@ -8,9 +8,10 @@
 		".vscode",
 		".vscode-insiders"
 	],
-	"cSpell.words": ["desaturated", "pnpm", "sveltekit"],
+	"cSpell.words": ["desaturated", "pnpm", "sveltekit", "testid"],
 	"editor.codeActionsOnSave": {
 		"source.fixAll.eslint": true
 	},
-	"eslint.validate": ["javascript", "svelte"]
+	"eslint.validate": ["javascript", "svelte"],
+	"vitest.include": ["src/**/*.{test,spec}.{js,ts}"]
 }

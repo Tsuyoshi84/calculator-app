@@ -2,7 +2,7 @@
 	export let displayValue = '';
 </script>
 
-<div class="display">
+<div class="display" data-testid="display">
 	{displayValue}
 </div>
 
