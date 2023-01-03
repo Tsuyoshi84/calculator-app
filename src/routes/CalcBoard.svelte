@@ -49,7 +49,6 @@
 		padding: 1rem;
 		inline-size: 100%;
 		max-inline-size: 572px;
-		max-block-size: 668px;
 		display: grid;
 		gap: 1.5rem;
 		grid-template-columns: repeat(2, minmax(min-content, 1fr));
@@ -89,5 +88,11 @@
 		min-block-size: 420px;
 		border-radius: 1rem;
 		grid-area: buttons;
+	}
+
+	@media (min-width: 768px) {
+		.buttons {
+			gap: 1.5rem;
+		}
 	}
 </style>
