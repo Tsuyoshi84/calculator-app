@@ -29,11 +29,12 @@ Users should be able to:
 ### Links
 
 - Solution URL: <https://github.com/Tsuyoshi84/calculator-app>
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: <https://calculator-app-mocha-psi.vercel.app/>
 
 ## My process
 
 ### Built with
 
 - [SvelteKit](https://kit.svelte.dev/)
-- [Playwright](https://playwright.dev/) - Test framework
+- [Vitest](https://vitest.dev/)
+- [Playwright](https://playwright.dev/)
