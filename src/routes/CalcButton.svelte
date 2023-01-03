@@ -2,9 +2,9 @@
 	type ButtonType = 'normal' | 'clear' | 'submit';
 
 	export let type: ButtonType = 'normal';
-	export let label: string = '';
-	export let large: boolean = false;
-	export let invert: boolean = false;
+	export let label = '';
+	export let large = false;
+	export let invert = false;
 </script>
 
 <button type="submit" class={`${type}`} class:large class:invert on:click>
