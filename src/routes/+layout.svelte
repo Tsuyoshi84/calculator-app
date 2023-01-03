@@ -1,6 +1,6 @@
 <script>
 	import '../app.css';
-	import { theme } from './stores';
+	import { theme } from '../stores/theme';
 </script>
 
 <div class="app" data-theme={$theme}>

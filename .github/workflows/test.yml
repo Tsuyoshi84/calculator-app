@@ -37,11 +37,11 @@ jobs:
       - name: Install package
         run: npm install
 
-      # - name: Unit Test
-      #   run: npm run test:unit
+      - name: Unit Test
+        run: npm run test:unit
 
-      # - name: Test
-      #   run: npm test
+      - name: Test
+        run: npm test
 
       - name: Check
         run: npm run check
