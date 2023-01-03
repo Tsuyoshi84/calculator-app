@@ -7,16 +7,14 @@
 	<meta name="description" content="Calculator App" />
 </svelte:head>
 
-<section>
+<div class="wrapper">
 	<CalcBoard />
-</section>
+</div>
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
+	.wrapper {
+		display: grid;
+		place-items: center;
+		height: 100%;
 	}
 </style>

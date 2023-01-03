@@ -45,7 +45,7 @@
 		--background-color: var(--color-button-bg-normal);
 		--active-background-color: var(--color-button-bg-normal-active);
 		--shadow-color: var(--color-button-shadow-normal);
-		--font-size: 2rem;
+		font-size: calc(var(--font-size) * (2 / 1.2));
 	}
 
 	button.clear {
@@ -64,5 +64,11 @@
 
 	button > div {
 		translate: 0 0.3rem;
+	}
+
+	@media (min-width: 768px) {
+		button {
+			--font-size: 1.5rem;
+		}
 	}
 </style>

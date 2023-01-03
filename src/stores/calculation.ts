@@ -27,8 +27,13 @@ function operatorToSymbol(operator: CalculationOperator) {
 function formatNumber(number: number | string) {
 	if (number === '.') return '0.';
 
-	const _number = typeof number === 'number' ? number : parseFloat(number);
-	return _number.toLocaleString('en-US');
+	const isNumberType = typeof number === 'number';
+
+	const endsWithDecimal = isNumberType ? false : number.toString().endsWith('.');
+	const _number = isNumberType ? number : parseFloat(number);
+	const formattedNumber = _number.toLocaleString('en-US');
+
+	return `${formattedNumber}${endsWithDecimal ? '.' : ''}`;
 }
 
 function calculateFromElements(elements: CalculationElement[]): string {
@@ -79,6 +84,10 @@ function calculateFromElements(elements: CalculationElement[]): string {
 const calculationElements = writable<CalculationElement[]>([]);
 const { update, set } = calculationElements;
 
+function isReadyToCalculate(elements: CalculationElement[]): boolean {
+	return elements.length === 0 || elements.at(-1)?.operator === 'calculate';
+}
+
 export const displayValue = derived<typeof calculationElements, string>(
 	calculationElements,
 	($calculationElements, set) => {
@@ -110,9 +119,9 @@ export const displayValue = derived<typeof calculationElements, string>(
 	}
 );
 
-export function addNumber(number: `${number}`) {
+export function addNumber(number: `${number}`): void {
 	update((elements) => {
-		if (elements.length === 0) return [{ operator: 'add', value: number }];
+		if (isReadyToCalculate(elements)) return [{ operator: 'add', value: number }];
 
 		const lastElement = elements.at(-1);
 		assertDefined(lastElement);
@@ -124,7 +133,7 @@ export function addNumber(number: `${number}`) {
 
 export function addDecimal() {
 	update((elements) => {
-		if (elements.length === 0) return [{ operator: 'add', value: '.' }];
+		if (isReadyToCalculate(elements)) return [{ operator: 'add', value: '.' }];
 
 		const lastElement = elements.at(-1);
 		assertDefined(lastElement);

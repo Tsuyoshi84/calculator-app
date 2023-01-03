@@ -15,6 +15,10 @@
 		block-size: 100%;
 	}
 
+	main {
+		height: 100%;
+	}
+
 	.app[data-theme='1'] {
 		--color-bg-main: hsl(222, 26%, 31%);
 		--color-bg-sub: hsl(223, 31%, 20%);

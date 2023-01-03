@@ -18,4 +18,11 @@
 		color: var(--color-text-board);
 		min-block-size: 92px;
 	}
+
+	@media (min-width: 768px) {
+		.display {
+			font-size: 3.5rem;
+			min-block-size: 116px;
+		}
+	}
 </style>
