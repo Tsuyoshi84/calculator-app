@@ -8,5 +8,5 @@
 		".vscode",
 		".vscode-insiders"
 	],
-	"cSpell.words": ["desaturated", "sveltekit"]
+	"cSpell.words": ["desaturated", "pnpm", "sveltekit"]
 }
