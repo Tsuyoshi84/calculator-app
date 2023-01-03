@@ -8,9 +8,7 @@
 </script>
 
 <button type="submit" class={`${type}`} class:large class:invert on:click>
-	<div>
-		{label}
-	</div>
+	{label}
 </button>
 
 <style>
@@ -25,6 +23,8 @@
 		border-radius: 8px;
 		box-shadow: 0 4px 0 0 var(--shadow-color);
 		transition: translate 0.1s ease, box-shadow 0.1s ease;
+		min-block-size: 62px;
+		padding-block-start: 0.6rem;
 	}
 
 	button:where(:hover, :focus-visible) {
@@ -62,13 +62,11 @@
 		--shadow-color: var(--color-button-shadow-submit);
 	}
 
-	button > div {
-		translate: 0 0.3rem;
-	}
-
 	@media (min-width: 768px) {
 		button {
 			--font-size: 1.5rem;
+			min-block-size: 72px;
+			padding-block-start: 0.7rem;
 		}
 	}
 </style>

@@ -14,6 +14,7 @@
 		</div>
 		<input
 			bind:value={theme}
+			aria-label="Theme switch"
 			type="range"
 			name="theme"
 			data-testid="theme-switch"
