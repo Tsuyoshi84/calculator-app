@@ -52,7 +52,7 @@
 		display: grid;
 		gap: 1.5rem;
 		grid-template-columns: repeat(2, minmax(min-content, 1fr));
-		grid-template-rows: repeat(2, minmax(min-content, 1fr));
+		grid-template-rows: repeat(3, min-content);
 		grid-template-areas:
 			'title theme-switch'
 			'display display'
