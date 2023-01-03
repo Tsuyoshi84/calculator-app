@@ -1,5 +1,4 @@
 <script>
-	import Counter from './Counter.svelte';
 	import CalcBoard from './CalcBoard.svelte';
 </script>
 
