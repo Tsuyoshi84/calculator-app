@@ -24,18 +24,20 @@ function operatorToSymbol(operator: CalculationOperator) {
 }
 
 // Format number by adding commas
-function formatNumber(number: number | string) {
+function formatNumber(number: string) {
 	if (number === '.') return '0.';
 
-	const isNumberType = typeof number === 'number';
+	// Check if number includes decimal
+	const [digitNumber, decimalNumber] = number.split('.');
 
-	const endsWithDecimal = isNumberType ? false : number.toString().endsWith('.');
-	const _number = isNumberType ? number : parseFloat(number);
-	const formattedNumber = _number.toLocaleString('en-US');
+	const formattedDigitNumber =
+		digitNumber === '' ? '0' : parseFloat(digitNumber).toLocaleString('en-US');
+	const formattedDecimalNumber = typeof decimalNumber === 'string' ? `.${decimalNumber}` : '';
 
-	return `${formattedNumber}${endsWithDecimal ? '.' : ''}`;
+	return `${formattedDigitNumber}${formattedDecimalNumber}`;
 }
 
+let lastResult = 0;
 function calculateFromElements(elements: CalculationElement[]): string {
 	if (elements.length === 0) return '';
 
@@ -78,7 +80,9 @@ function calculateFromElements(elements: CalculationElement[]): string {
 		result -= currentValue;
 	}
 
-	return `${formatNumber(result)}`;
+	lastResult = result;
+
+	return `${formatNumber(result.toString())}`;
 }
 
 const calculationElements = writable<CalculationElement[]>([]);
@@ -150,6 +154,13 @@ export function addOperator(operator: CalculationOperator) {
 		if (elements.length === 0) {
 			return [
 				{ operator: 'add', value: '0' },
+				{ operator, value: '' }
+			];
+		}
+
+		if (elements.at(-1)?.operator === 'calculate') {
+			return [
+				{ operator: 'add', value: `${lastResult}` },
 				{ operator, value: '' }
 			];
 		}

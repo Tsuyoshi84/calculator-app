@@ -44,6 +44,23 @@ describe('calculation', () => {
 		expect(get(displayValue)).toBe('0.');
 	});
 
+	it('should show "0.0001"', () => {
+		addDecimal();
+		expect(get(displayValue)).toBe('0.');
+
+		addNumber('0');
+		expect(get(displayValue)).toBe('0.0');
+
+		addNumber('0');
+		expect(get(displayValue)).toBe('0.00');
+
+		addNumber('0');
+		expect(get(displayValue)).toBe('0.000');
+
+		addNumber('1');
+		expect(get(displayValue)).toBe('0.0001');
+	});
+
 	it('should show add symbol', () => {
 		addNumber('1');
 		addOperator('add');
@@ -111,6 +128,22 @@ describe('calculation', () => {
 		addNumber('2');
 		addOperator('subtract');
 		addNumber('1');
+		calculate();
+		expect(get(displayValue)).toBe('7');
+	});
+
+	it('should resume when pressing operator after calculation', () => {
+		// 2 + 3 = 5
+		// 5 + 2 = 7
+
+		addNumber('2');
+		addOperator('add');
+		addNumber('3');
+		calculate();
+		expect(get(displayValue)).toBe('5');
+
+		addOperator('add');
+		addNumber('2');
 		calculate();
 		expect(get(displayValue)).toBe('7');
 	});

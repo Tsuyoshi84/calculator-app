@@ -34,11 +34,9 @@ test('should show calculation result', async ({ page }) => {
 });
 
 test('should show calculation result with decimal', async ({ page }) => {
-	// 12.3 + 10 * 4 / 2 - 1 = 31.3
+	// 12 + 10 * 4 / 2 - 1.5 = 30.5
 	await page.getByRole('button', { name: '1' }).click();
 	await page.getByRole('button', { name: '2' }).click();
-	await page.getByRole('button', { name: '.' }).click();
-	await page.getByRole('button', { name: '3' }).click();
 	await page.getByRole('button', { name: '+' }).click();
 	await page.getByRole('button', { name: '1' }).click();
 	await page.getByRole('button', { name: '0' }).click();
@@ -48,9 +46,11 @@ test('should show calculation result with decimal', async ({ page }) => {
 	await page.getByRole('button', { name: '2' }).click();
 	await page.getByRole('button', { name: '-' }).click();
 	await page.getByRole('button', { name: '1' }).click();
+	await page.getByRole('button', { name: '.' }).click();
+	await page.getByRole('button', { name: '5' }).click();
 	await page.getByRole('button', { name: '=' }).click();
 
-	await expect(page.getByTestId('display')).toContainText('31.3');
+	await expect(page.getByTestId('display')).toContainText('30.5');
 });
 
 test('should empty display after clicking reset', async ({ page }) => {
