@@ -1,5 +1,5 @@
 <script lang="ts">
-	import type { Theme } from './stores';
+	import type { Theme } from '../stores/theme';
 
 	export let theme: Theme | undefined = undefined;
 </script>
@@ -12,7 +12,15 @@
 			<span>2</span>
 			<span>3</span>
 		</div>
-		<input bind:value={theme} type="range" name="theme" id="theme-range" min="1" max="3" step="1" />
+		<input
+			bind:value={theme}
+			type="range"
+			name="theme"
+			data-testid="theme-switch"
+			min="1"
+			max="3"
+			step="1"
+		/>
 	</div>
 </div>
 

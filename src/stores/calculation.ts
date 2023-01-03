@@ -25,6 +25,8 @@ function operatorToSymbol(operator: CalculationOperator) {
 
 // Format number by adding commas
 function formatNumber(number: number | string) {
+	if (number === '.') return '0.';
+
 	const _number = typeof number === 'number' ? number : parseFloat(number);
 	return _number.toLocaleString('en-US');
 }

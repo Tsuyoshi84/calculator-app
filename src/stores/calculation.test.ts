@@ -37,6 +37,11 @@ describe('calculation', () => {
 		expect(get(displayValue)).toBe('1.2');
 	});
 
+	it('should show "0." if add decimal before entering number', () => {
+		addDecimal();
+		expect(get(displayValue)).toBe('0.');
+	});
+
 	it('should show add symbol', () => {
 		addNumber('1');
 		addOperator('add');
