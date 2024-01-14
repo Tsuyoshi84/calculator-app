@@ -10,8 +10,9 @@
 	],
 	"cSpell.words": ["desaturated", "pnpm", "sveltekit", "testid"],
 	"editor.codeActionsOnSave": {
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": "explicit"
 	},
 	"eslint.validate": ["javascript", "svelte"],
+	"files.autoSave": "afterDelay",
 	"vitest.include": ["src/**/*.{test,spec}.{js,ts}"]
 }
