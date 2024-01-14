@@ -1,33 +1,33 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
+  - package-ecosystem: 'npm'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     assignees:
-      - "Tsuyoshi84"
+      - 'Tsuyoshi84'
     open-pull-requests-limit: 10
     groups:
       lint-and-format:
         patterns:
-          - "*eslint*"
-          - "*stylelint*"
-          - "*prettier*"
+          - '*eslint*'
+          - '*stylelint*'
+          - '*prettier*'
       test:
         patterns:
-          - "@playwrite/*"
-          - "vitest"
+          - '@playwrite/*'
+          - 'vitest'
       svelte:
         patterns:
-          - "@sveltejs/*"
-          - "*svelte*"
+          - '@sveltejs/*'
+          - '*svelte*'
 
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'github-actions'
+    directory: '/'
     schedule:
-      interval: "monthly"
+      interval: 'monthly'
     labels:
-      - "github_actions"
+      - 'github_actions'
     commit-message:
-      prefix: "github-actions"
+      prefix: 'github-actions'
     open-pull-requests-limit: 30
