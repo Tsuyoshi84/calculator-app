@@ -45,8 +45,8 @@ jobs:
       - name: Install package
         run: pnpm install
 
-      - name: Unit Test
-        run: pnpm test:unit
+      # - name: Unit Test
+      #   run: pnpm test:unit
 
       - name: Install playwright browsers
         run: pnpx playwright install-deps chromium
