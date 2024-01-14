@@ -49,7 +49,7 @@ jobs:
       #   run: pnpm test:unit
 
       - name: Install playwright browsers
-        run: pnpx playwright install-deps chromium
+        run: pnpx playwright install --with-deps
 
       - name: Test
         run: pnpm test
