@@ -8,23 +8,24 @@ interface CalculationElement {
 	value: string;
 }
 
+const OPERATOR_TO_SYMBOL = {
+	add: '+',
+	subtract: '-',
+	multiply: 'x',
+	divide: '/',
+	calculate: '='
+} as const satisfies Record<CalculationOperator, string>;
+
 function operatorToSymbol(operator: CalculationOperator) {
-	switch (operator) {
-		case 'add':
-			return '+';
-		case 'subtract':
-			return '-';
-		case 'multiply':
-			return 'x';
-		case 'divide':
-			return '/';
-		case 'calculate':
-			return '=';
-	}
+	return OPERATOR_TO_SYMBOL[operator];
 }
 
-// Format number by adding commas
-function formatNumber(number: string) {
+/**
+ * Formats a number by adding commas for thousands separator and handling decimal places.
+ * @param number - The number to be formatted.
+ * @returns The formatted number as a string.
+ */
+function formatNumber(number: string): string {
 	if (number === '.') return '0.';
 
 	// Check if number includes decimal
@@ -135,7 +136,7 @@ export function addNumber(number: `${number}`): void {
 	});
 }
 
-export function addDecimal() {
+export function addDecimal(): void {
 	update((elements) => {
 		if (isReadyToCalculate(elements)) return [{ operator: 'add', value: '.' }];
 
@@ -149,7 +150,7 @@ export function addDecimal() {
 	});
 }
 
-export function addOperator(operator: CalculationOperator) {
+export function addOperator(operator: CalculationOperator): void {
 	update((elements) => {
 		if (elements.length === 0) {
 			return [
@@ -194,11 +195,11 @@ export function remove() {
 	});
 }
 
-export function reset() {
+export function reset(): void {
 	set([]);
 }
 
-export function calculate() {
+export function calculate(): void {
 	update((elements) => {
 		if (elements.length === 0) return elements;
 
