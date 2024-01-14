@@ -16,7 +16,7 @@
 	}
 
 	main {
-		height: 100%;
+		block-size: 100%;
 	}
 
 	.app[data-theme='1'] {
