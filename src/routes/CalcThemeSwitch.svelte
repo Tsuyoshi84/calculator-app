@@ -27,16 +27,16 @@
 
 <style>
 	.theme-switch {
-		color: var(--color-text-board);
 		display: flex;
-		gap: 1.5rem;
-		justify-content: flex-end;
 		align-items: flex-end;
+		justify-content: flex-end;
+		gap: 1.5rem;
+		color: var(--color-text-board);
 	}
 
 	.title {
-		font-size: 0.8rem;
 		margin-block-end: 0.7rem;
+		font-size: 0.8rem;
 	}
 
 	.switch-wrapper {
@@ -45,47 +45,47 @@
 
 	.theme-numbers {
 		display: flex;
+		padding-inline: 0.5rem;
 		justify-content: space-between;
 		font-size: 0.8rem;
-		padding-inline: 0.5rem;
 	}
 
 	input[type='range'] {
 		--thumb-size: 0.95rem;
 		--range-track-height: 1.5rem;
 
-		-webkit-appearance: none;
-		appearance: none;
+		inline-size: 100%;
 		background: transparent;
 		cursor: pointer;
-		inline-size: 100%;
+		appearance: none;
 	}
 
 	/***** Track Styles *****/
+
 	/***** Chrome, Safari, Opera, and Edge Chromium *****/
 	input[type='range']::-webkit-slider-runnable-track {
-		background: var(--color-bg-sub);
 		block-size: var(--range-track-height);
-		border-radius: 1rem;
 		padding-inline: 0.3rem;
+		border-radius: 1rem;
+		background: var(--color-bg-sub);
 	}
 
 	/******** Firefox ********/
 	input[type='range']::-moz-range-track {
-		background: var(--color-bg-sub);
 		block-size: var(--range-track-height);
 		border-radius: 1rem;
+		background: var(--color-bg-sub);
 	}
 
 	/***** Thumb Styles *****/
+
 	/***** Chrome, Safari, Opera, and Edge Chromium *****/
 	input[type='range']::-webkit-slider-thumb {
-		-webkit-appearance: none; /* Override default look */
-		appearance: none;
-		background-color: var(--color-button-bg-submit);
-		block-size: var(--thumb-size);
 		inline-size: var(--thumb-size);
+		block-size: var(--thumb-size);
 		margin-block-start: calc((var(--range-track-height) - var(--thumb-size)) / 2);
 		border-radius: 50%;
+		background-color: var(--color-button-bg-submit);
+		appearance: none; /* Override default look */
 	}
 </style>
