@@ -8,21 +8,21 @@
 
 <style>
 	.display {
-		background-color: var(--color-bg-screen);
-		padding-block: 1rem;
-		padding-inline: 1.5rem;
 		inline-size: 100%;
+		min-block-size: 92px;
+		padding-inline: 1.5rem;
+		padding-block: 1rem;
 		border-radius: 1rem;
 		font-size: 2.5rem;
 		text-align: end;
 		color: var(--color-text-board);
-		min-block-size: 92px;
+		background-color: var(--color-bg-screen);
 	}
 
-	@media (min-width: 768px) {
+	@media (width >= 768px) {
 		.display {
-			font-size: 3.5rem;
 			min-block-size: 116px;
+			font-size: 3.5rem;
 		}
 	}
 </style>

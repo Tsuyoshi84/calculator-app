@@ -46,27 +46,26 @@
 
 <style>
 	.board {
-		padding: 1rem;
+		display: grid;
 		inline-size: 100%;
 		max-inline-size: 572px;
-		display: grid;
-		gap: 1.5rem;
-		grid-template-columns: repeat(2, minmax(min-content, 1fr));
-		grid-template-rows: repeat(3, min-content);
+		padding: 1rem;
+		grid-template: repeat(3, min-content) / repeat(2, minmax(min-content, 1fr));
 		grid-template-areas:
 			'title theme-switch'
 			'display display'
 			'buttons buttons';
+		gap: 1.5rem;
 	}
 
 	.title {
+		display: flex;
+		margin: 0;
+		grid-area: title;
+		align-items: center;
 		font-size: 2rem;
 		font-weight: 700;
 		color: var(--color-text-board);
-		margin: 0;
-		grid-area: title;
-		display: flex;
-		align-items: center;
 	}
 
 	.theme-switch {
@@ -79,18 +78,18 @@
 
 	.buttons {
 		display: grid;
+		inline-size: 100%;
+		min-block-size: 420px;
+		padding: 1.5rem;
+		border-radius: 1rem;
+		grid-area: buttons;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(5, 1fr);
 		grid-gap: 1rem;
 		background-color: var(--color-bg-sub);
-		padding: 1.5rem;
-		inline-size: 100%;
-		min-block-size: 420px;
-		border-radius: 1rem;
-		grid-area: buttons;
 	}
 
-	@media (min-width: 768px) {
+	@media (width >= 768px) {
 		.buttons {
 			gap: 1.5rem;
 		}

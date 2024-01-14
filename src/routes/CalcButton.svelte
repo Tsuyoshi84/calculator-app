@@ -15,18 +15,18 @@
 	button {
 		--font-size: 1.2rem;
 
-		cursor: pointer;
-		color: var(--text-color);
-		background-color: var(--background-color);
-		font-size: var(--font-size);
+		min-block-size: 62px;
+		padding-block-start: 0.6rem;
 		border: none;
 		border-radius: 8px;
+		font-size: var(--font-size);
+		color: var(--text-color);
+		background-color: var(--background-color);
 		box-shadow: 0 4px 0 0 var(--shadow-color);
 		transition:
 			translate 0.1s ease,
 			box-shadow 0.1s ease;
-		min-block-size: 62px;
-		padding-block-start: 0.6rem;
+		cursor: pointer;
 	}
 
 	button:where(:hover, :focus-visible) {
@@ -34,8 +34,8 @@
 	}
 
 	button:active {
-		translate: 0 4px;
 		box-shadow: 0 0 0 0 var(--shadow-color);
+		translate: 0 4px;
 	}
 
 	button.large {
@@ -47,6 +47,7 @@
 		--background-color: var(--color-button-bg-normal);
 		--active-background-color: var(--color-button-bg-normal-active);
 		--shadow-color: var(--color-button-shadow-normal);
+
 		font-size: calc(var(--font-size) * (2 / 1.2));
 	}
 
@@ -64,9 +65,10 @@
 		--shadow-color: var(--color-button-shadow-submit);
 	}
 
-	@media (min-width: 768px) {
+	@media (width >= 768px) {
 		button {
 			--font-size: 1.5rem;
+
 			min-block-size: 72px;
 			padding-block-start: 0.7rem;
 		}

@@ -14,7 +14,7 @@
 <style>
 	.wrapper {
 		display: grid;
+		block-size: 100%;
 		place-items: center;
-		height: 100%;
 	}
 </style>
