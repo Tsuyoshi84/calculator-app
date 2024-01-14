@@ -22,7 +22,9 @@
 		border: none;
 		border-radius: 8px;
 		box-shadow: 0 4px 0 0 var(--shadow-color);
-		transition: translate 0.1s ease, box-shadow 0.1s ease;
+		transition:
+			translate 0.1s ease,
+			box-shadow 0.1s ease;
 		min-block-size: 62px;
 		padding-block-start: 0.6rem;
 	}
