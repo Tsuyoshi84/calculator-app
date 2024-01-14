@@ -58,7 +58,10 @@ jobs:
         run: pnpm check
 
       - name: Lint
-        run: pnpm lint
+        run: pnpm lint:fix
+
+      - name: Lint CSS
+        run: pnpm lint-css:fix
 
       - name: Format
         run: pnpm format
