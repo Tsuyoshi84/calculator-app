@@ -43,28 +43,28 @@ jobs:
           cache-dependency-path: pnpm-lock.yaml
 
       - name: Install package
-        run: npm ci
+        run: pnpm ci
 
       - name: Unit Test
-        run: npm run test:unit
+        run: pnpm test:unit
 
       - name: Install playwright browsers
-        run: npx playwright install --with-deps
+        run: pnpx playwright install-deps chromium
 
       - name: Test
-        run: npm test
+        run: pnpm test
 
       - name: Check
-        run: npm run check
+        run: pnpm check
 
       - name: Lint
-        run: npm run lint
+        run: pnpm lint
 
       - name: Format
-        run: npm run format
+        run: pnpm format
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
 
       - name: Build
-        run: npm run build
+        run: pnpm build
