@@ -20,7 +20,7 @@ on:
       - '.vscode/**'
 
 jobs:
-  build-test:
+  test:
     name: Build and Test
     runs-on: ubuntu-latest
     permissions:
@@ -71,3 +71,24 @@ jobs:
 
       - name: Build
         run: pnpm build
+
+  auto-merge:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    if: ${{ github.actor == 'dependabot[bot]' && github.event_name == 'pull_request' }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Wait for checks to pass
+        uses: fountainhead/action-wait-for-check@v1.2.0
+        id: wait-for-checks
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          checkName: 'test' 
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Merge PR
+        if: ${{ steps.wait-for-checks.outputs.conclusion == 'success' }}
+        run: gh pr merge --auto --squash ${{ github.event.pull_request.html_url }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
