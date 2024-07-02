@@ -6,8 +6,8 @@ settings:
 
 devDependencies:
   '@fontsource/fira-mono':
-    specifier: ^5.0.8
-    version: 5.0.8
+    specifier: ^5.0.13
+    version: 5.0.13
   '@playwright/test':
     specifier: ^1.43.1
     version: 1.43.1
@@ -419,8 +419,8 @@ packages:
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
     dev: true
 
-  /@fontsource/fira-mono@5.0.8:
-    resolution: {integrity: sha512-8OJiUK2lzJjvDlkmamEfhtpL1cyFApg1Pk4kE5Pw5UTf1ETF3Yy/pprgwV5I+LQPDjuFvinsinT9xSUZ2b/zuQ==}
+  /@fontsource/fira-mono@5.0.13:
+    resolution: {integrity: sha512-fZDjR2BdAqmauEbTjcIT62zYzbOgDa5+IQH34D2k8Pxmy1T815mAqQkZciWZVQ9dc/BgdTtTUV9HJ2ulBNwchg==}
     dev: true
 
   /@humanwhocodes/module-importer@1.0.1:
