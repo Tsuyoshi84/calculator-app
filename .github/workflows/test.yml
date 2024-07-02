@@ -60,9 +60,9 @@ jobs:
         run: pnpm format
 
       - name: Install playwright browsers
-        run: pnpx playwright install --with-deps
+        run: pnpm exec playwright install --with-deps
 
-      - name: Test
+      - name: Playwright test
         run: pnpm exec playwright test
 
       - name: Commit changes
