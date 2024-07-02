@@ -63,7 +63,7 @@ jobs:
         run: pnpx playwright install --with-deps
 
       - name: Test
-        run: pnpx playwright test
+        run: pnpm exec playwright test
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
