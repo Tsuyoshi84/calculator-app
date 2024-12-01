@@ -1,11 +1,17 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import { theme } from '../stores/theme';
+
+	interface Props {
+		children?: import('svelte').Snippet;
+	}
+
+	let { children }: Props = $props();
 </script>
 
 <div class="app" data-theme={$theme}>
 	<main>
-		<slot />
+		{@render children?.()}
 	</main>
 </div>
 

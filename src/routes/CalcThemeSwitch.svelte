@@ -1,7 +1,11 @@
 <script lang="ts">
 	import type { Theme } from '../stores/theme';
 
-	export let theme: Theme | undefined = undefined;
+	interface Props {
+		theme?: Theme | undefined;
+	}
+
+	let { theme = $bindable(undefined) }: Props = $props();
 </script>
 
 <div class="theme-switch">
