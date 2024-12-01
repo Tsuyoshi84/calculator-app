@@ -1,13 +1,24 @@
 <script lang="ts">
 	type ButtonType = 'normal' | 'clear' | 'submit';
 
-	export let type: ButtonType = 'normal';
-	export let label = '';
-	export let large = false;
-	export let invert = false;
+	interface Props {
+		type?: ButtonType;
+		label?: string;
+		large?: boolean;
+		invert?: boolean;
+		onclick?: () => void;
+	}
+
+	let {
+		type = 'normal',
+		label = '',
+		large = false,
+		invert = false,
+		onclick = () => {}
+	}: Props = $props();
 </script>
 
-<button type="submit" class={`${type}`} class:large class:invert on:click>
+<button type="submit" class={`${type}`} class:large class:invert {onclick}>
 	{label}
 </button>
 
@@ -29,7 +40,7 @@
 		cursor: pointer;
 	}
 
-	button:where(:hover, :focus-visible) {
+	button:where(:global(:hover, :focus-visible)) {
 		background-color: var(--active-background-color);
 	}
 

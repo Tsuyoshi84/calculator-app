@@ -1,5 +1,9 @@
 <script lang="ts">
-	export let displayValue = '';
+	interface Props {
+		displayValue?: string;
+	}
+
+	let { displayValue = '' }: Props = $props();
 </script>
 
 <div class="display" data-testid="display">
