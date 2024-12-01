@@ -1,7 +1,4 @@
 <script lang="ts">
-	import { createBubbler } from 'svelte/legacy';
-
-	const bubble = createBubbler();
 	type ButtonType = 'normal' | 'clear' | 'submit';
 
 	interface Props {
@@ -9,17 +6,19 @@
 		label?: string;
 		large?: boolean;
 		invert?: boolean;
+		onclick?: () => void;
 	}
 
 	let {
 		type = 'normal',
 		label = '',
 		large = false,
-		invert = false
+		invert = false,
+		onclick = () => {}
 	}: Props = $props();
 </script>
 
-<button type="submit" class={`${type}`} class:large class:invert onclick={bubble('click')}>
+<button type="submit" class={`${type}`} class:large class:invert {onclick}>
 	{label}
 </button>
 

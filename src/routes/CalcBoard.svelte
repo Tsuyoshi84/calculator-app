@@ -23,24 +23,24 @@
 		<CalcDisplay displayValue={$displayValue} />
 	</div>
 	<div class="buttons">
-		<CalcButton type="normal" label="7" on:click={() => addNumber('7')} />
-		<CalcButton type="normal" label="8" on:click={() => addNumber('8')} />
-		<CalcButton type="normal" label="9" on:click={() => addNumber('9')} />
-		<CalcButton type="clear" label="DEL" on:click={() => remove()} />
-		<CalcButton type="normal" label="4" on:click={() => addNumber('4')} />
-		<CalcButton type="normal" label="5" on:click={() => addNumber('5')} />
-		<CalcButton type="normal" label="6" on:click={() => addNumber('6')} />
-		<CalcButton type="normal" label="+" on:click={() => addOperator('add')} />
-		<CalcButton type="normal" label="1" on:click={() => addNumber('1')} />
-		<CalcButton type="normal" label="2" on:click={() => addNumber('2')} />
-		<CalcButton type="normal" label="3" on:click={() => addNumber('3')} />
-		<CalcButton type="normal" label="-" on:click={() => addOperator('subtract')} />
-		<CalcButton type="normal" label="." on:click={() => addDecimal()} />
-		<CalcButton type="normal" label="0" on:click={() => addNumber('0')} />
-		<CalcButton type="normal" label="/" on:click={() => addOperator('divide')} />
-		<CalcButton type="normal" label="x" on:click={() => addOperator('multiply')} />
-		<CalcButton type="clear" label="RESET" large on:click={() => reset()} />
-		<CalcButton type="submit" label="=" large on:click={() => calculate()} />
+		<CalcButton type="normal" label="7" onclick={() => addNumber('7')} />
+		<CalcButton type="normal" label="8" onclick={() => addNumber('8')} />
+		<CalcButton type="normal" label="9" onclick={() => addNumber('9')} />
+		<CalcButton type="clear" label="DEL" onclick={() => remove()} />
+		<CalcButton type="normal" label="4" onclick={() => addNumber('4')} />
+		<CalcButton type="normal" label="5" onclick={() => addNumber('5')} />
+		<CalcButton type="normal" label="6" onclick={() => addNumber('6')} />
+		<CalcButton type="normal" label="+" onclick={() => addOperator('add')} />
+		<CalcButton type="normal" label="1" onclick={() => addNumber('1')} />
+		<CalcButton type="normal" label="2" onclick={() => addNumber('2')} />
+		<CalcButton type="normal" label="3" onclick={() => addNumber('3')} />
+		<CalcButton type="normal" label="-" onclick={() => addOperator('subtract')} />
+		<CalcButton type="normal" label="." onclick={() => addDecimal()} />
+		<CalcButton type="normal" label="0" onclick={() => addNumber('0')} />
+		<CalcButton type="normal" label="/" onclick={() => addOperator('divide')} />
+		<CalcButton type="normal" label="x" onclick={() => addOperator('multiply')} />
+		<CalcButton type="clear" label="RESET" large onclick={() => reset()} />
+		<CalcButton type="submit" label="=" large onclick={() => calculate()} />
 	</div>
 </section>
 
