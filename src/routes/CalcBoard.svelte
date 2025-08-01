@@ -85,7 +85,7 @@
 		grid-area: buttons;
 		grid-template-columns: repeat(4, 1fr);
 		grid-template-rows: repeat(5, 1fr);
-		grid-gap: 1rem;
+		gap: 1rem;
 		background-color: var(--color-bg-sub);
 	}
 
