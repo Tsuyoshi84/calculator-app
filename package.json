@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@eslint/js": "^9.36.0",
-		"@fontsource/fira-mono": "^5.2.5",
+		"@fontsource/fira-mono": "^5.2.7",
 		"@playwright/test": "^1.55.1",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/kit": "^2.27.0",
